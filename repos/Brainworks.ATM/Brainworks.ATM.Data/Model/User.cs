@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Brainworks.ATM.Data
 {
     public class User
@@ -17,7 +18,8 @@ namespace Brainworks.ATM.Data
         public string Pin{ get; set; }
         public string Mobile{ get; set; }
         public string Email{ get; set; }
-        public string Status{ get; set; }
+        public string StatusId{ get; set; }
+       public Status status { get; set; }
 
     }
 }

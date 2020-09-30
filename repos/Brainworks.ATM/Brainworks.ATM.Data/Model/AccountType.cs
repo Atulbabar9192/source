@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Brainworks.ATM.Data.Model
+namespace Brainworks.ATM.Data
 {
     public class AccountType
     {
