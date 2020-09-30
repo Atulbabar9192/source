@@ -1,4 +1,5 @@
 ﻿
+using Brainworks.ATM.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Brainworks.ATM.Data
 
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<AccountType> AccountTypes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connectionString = "Data source=(LocalDB)\\MSSQLLocalDB; Initial Catalog=ATMDB;Integrated Security=True";
@@ -29,6 +31,8 @@ namespace Brainworks.ATM.Data
             modelBuilder.Entity<User>().Property(b=>b.Mobile).HasColumnType("varchar(200)").IsRequired();
             modelBuilder.Entity<User>().Property(b=>b.Email).HasColumnType("varchar(200)").IsRequired();
             modelBuilder.Entity<User>().Property(b=>b.Status).HasColumnType("varchar(20)").IsRequired();
+            modelBuilder.Entity<AccountType>().Property(b=>b.Name).HasColumnType("varchar(20)").IsRequired();
+
             
         }
     }
